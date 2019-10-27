@@ -1,4 +1,4 @@
-module github.com/prabhuomkar/arXiv
+module github.com/prabhuomkar/arxiv-graphql
 
 go 1.12
 
