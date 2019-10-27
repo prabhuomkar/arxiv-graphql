@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/prabhuomkar/arXiv/model"
+	"github.com/prabhuomkar/arxiv-graphql/model"
 
 	"github.com/clbanning/mxj"
 

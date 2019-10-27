@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/prabhuomkar/arXiv/config"
+	"github.com/prabhuomkar/arxiv-graphql/config"
 
 	"github.com/graphql-go/handler"
-	"github.com/prabhuomkar/arXiv/schema"
+	"github.com/prabhuomkar/arxiv-graphql/schema"
 )
 
 const (

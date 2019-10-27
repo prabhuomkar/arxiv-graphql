@@ -2,7 +2,7 @@ package schema
 
 import (
 	"github.com/graphql-go/graphql"
-	"github.com/prabhuomkar/arXiv/resolver"
+	"github.com/prabhuomkar/arxiv-graphql/resolver"
 )
 
 // ArgsFieldConfig : GraphQL Field Config for arXiv Feed Arguments

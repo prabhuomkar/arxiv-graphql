@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/prabhuomkar/arXiv/config"
+	"github.com/prabhuomkar/arxiv-graphql/config"
 )
 
 // BuildAPIURL : Builds API URL for ArXiV based on parameters
