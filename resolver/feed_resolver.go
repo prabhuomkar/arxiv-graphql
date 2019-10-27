@@ -1,0 +1,81 @@
+package resolver
+
+import (
+	"encoding/json"
+	"strings"
+
+	"github.com/prabhuomkar/arXiv/model"
+
+	"github.com/clbanning/mxj"
+
+	"github.com/graphql-go/graphql"
+)
+
+const (
+	SortOrderAscending  = "ascending"
+	SortOrderDescending = "descending"
+
+	SortByRelevance       = "relevance"
+	SortByLastUpdatedDate = "lastUpdatedDate"
+	SortBySubmittedDate   = "submittedDate"
+
+	resultsLimit = 10
+
+	// ArxivURL ...
+	ArxivURL = "http://export.arxiv.org/api/query?search_query="
+)
+
+// FeedResolver : Resolver for query { feed }
+var FeedResolver = func(p graphql.ResolveParams) (interface{}, error) {
+	limit, ok := p.Args["limit"].(int)
+	if !ok || limit > resultsLimit || limit < 1 {
+		limit = resultsLimit
+	}
+	offset, ok := p.Args["offset"].(int)
+	if !ok || offset < 1 {
+		offset = 0
+	}
+	sortBy, ok := p.Args["sortBy"].(string)
+	if !ok || strings.TrimSpace(sortBy) == "" {
+		sortBy = SortBySubmittedDate
+	}
+	sortOrder, ok := p.Args["sortOrder"].(string)
+	if !ok || strings.TrimSpace(sortOrder) == "" {
+		sortOrder = SortOrderDescending
+	}
+	category, ok := p.Args["category"].(string)
+	if !ok || strings.TrimSpace(category) == "" {
+		category = "cs.AI"
+	}
+
+	fieldEntries, err := fetchArxivFeed(category, sortBy, sortOrder, limit, offset)
+	if err != nil {
+		return nil, err
+	}
+
+	return fieldEntries, nil
+}
+
+// fetches arXiv feed using their API
+func fetchArxivFeed(category, sortBy, sortOrder string, limit, offset int) ([]model.FeedEntry, error) {
+	apiURL := BuildAPIURL(category, sortBy, sortOrder, offset, limit)
+	res, err := FetchResponse(apiURL)
+	if err != nil {
+		return nil, err
+	}
+
+	mv, err := mxj.NewMapXml(res)
+	if err != nil {
+		return nil, err
+	}
+
+	jsonRes, err := mv.Json()
+	if err != nil {
+		return nil, err
+	}
+
+	var response model.Response
+	json.Unmarshal(jsonRes, &response)
+
+	return response.Feed.Entry, nil
+}
