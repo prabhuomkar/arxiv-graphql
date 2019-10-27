@@ -12,17 +12,22 @@ import (
 )
 
 const (
-	SortOrderAscending  = "ascending"
+	// SortOrderAscending ...
+	SortOrderAscending = "ascending"
+	// SortOrderDescending ...
 	SortOrderDescending = "descending"
 
-	SortByRelevance       = "relevance"
+	// SortByRelevance ...
+	SortByRelevance = "relevance"
+	// SortByLastUpdatedDate ...
 	SortByLastUpdatedDate = "lastUpdatedDate"
-	SortBySubmittedDate   = "submittedDate"
+	// SortBySubmittedDate ...
+	SortBySubmittedDate = "submittedDate"
 
 	resultsLimit = 10
 
-	// ArxivURL ...
-	ArxivURL = "http://export.arxiv.org/api/query?search_query="
+	// APIPath ...
+	APIPath = "/query?search_query="
 )
 
 // FeedResolver : Resolver for query { feed }

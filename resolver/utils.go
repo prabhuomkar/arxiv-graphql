@@ -5,11 +5,13 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/prabhuomkar/arXiv/config"
 )
 
 // BuildAPIURL : Builds API URL for ArXiV based on parameters
 func BuildAPIURL(category, sortBy, sortOrder string, start, maxResults int) string {
-	apiURL := ArxivURL
+	apiURL := config.Config.ArxivAPIURL + APIPath
 	if category != "" {
 		apiURL += "cat:" + category
 	}
