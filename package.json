@@ -1,0 +1,18 @@
+{
+  "name": "arxiv-graphql",
+  "version": "1.0.0",
+  "description": "GraphQL API for arXiv",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prabhuomkar/arxiv-graphql.git"
+  },
+  "author": "Omkar Prabhu <prabhuomkar@yandex.com>",
+  "bugs": {
+    "url": "https://github.com/prabhuomkar/arxiv-graphql/issues"
+  },
+  "homepage": "https://github.com/prabhuomkar/arxiv-graphql#readme"
+}
