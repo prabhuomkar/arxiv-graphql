@@ -22,3 +22,7 @@ Represents textual data as UTF-8 character sequences. This type is most often us
 ## URI
 
 An RFC 3986, RFC 3987, and RFC 6570 (level 4) compliant URI string.
+
+## DateTime
+
+An ISO-8601 encoded UTC date string.

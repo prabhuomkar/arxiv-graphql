@@ -3,8 +3,8 @@ package model
 import "time"
 
 type (
-	// FeedEntry : Model for arXiv entry of the feed
-	FeedEntry struct {
+	// Article : Model for arXiv article of the feed
+	Article struct {
 		ID              string     `json:"id"`
 		Updated         time.Time  `json:"updated"`
 		Published       time.Time  `json:"published"`
@@ -23,7 +23,7 @@ type (
 
 	// Feed ...
 	Feed struct {
-		Entry []FeedEntry `json:"entry"`
+		Entry []Article `json:"entry"`
 	}
 
 	// Author ...
