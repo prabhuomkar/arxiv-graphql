@@ -53,16 +53,16 @@ var FeedResolver = func(p graphql.ResolveParams) (interface{}, error) {
 		category = "cs.AI"
 	}
 
-	fieldEntries, err := fetchArxivFeed(category, sortBy, sortOrder, limit, offset)
+	feedEntries, err := fetchArxivFeed(category, sortBy, sortOrder, limit, offset)
 	if err != nil {
 		return nil, err
 	}
 
-	return fieldEntries, nil
+	return feedEntries, nil
 }
 
 // fetches arXiv feed using their API
-func fetchArxivFeed(category, sortBy, sortOrder string, limit, offset int) ([]model.FeedEntry, error) {
+func fetchArxivFeed(category, sortBy, sortOrder string, limit, offset int) ([]model.Article, error) {
 	apiURL := BuildAPIURL(category, sortBy, sortOrder, offset, limit)
 	res, err := FetchResponse(apiURL)
 	if err != nil {

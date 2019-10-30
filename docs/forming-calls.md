@@ -61,7 +61,7 @@ query {
   feed {
     id
     title
-    description
+    summary
     author {
       name
     }
