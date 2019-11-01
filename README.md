@@ -7,6 +7,20 @@
 
 GraphQL API for arXiv: e-print service by Cornell University
 
+## About
+
+### arXiv
+
+arXiv® is a free distribution service and an open archive for scholarly articles in the fields of physics, mathematics, computer science, quantitative biology, quantitative finance, statistics, electrical engineering and systems science, and economics. arXiv is a collaboratively funded, community-supported resource founded by Paul Ginsparg in 1991 and maintained and operated by Cornell University.
+
+Operations are maintained by the arXiv Leadership Team and arXiv staff at Cornell, with the help of numerous volunteer subject moderators. Governance of arXiv is led by the Leadership Team with guidance from the arXiv Scientific Advisory Board and the arXiv Member Advisory Board. arXiv is funded by Cornell University, the Simons Foundation, member institutions, and donors.
+
+Registered users may submit articles to be announced by arXiv. Submissions to arXiv are subject to a moderation process that verifies material is topical to subject areas and has scholarly value. Material is not peer-reviewed by arXiv.
+
+### GraphQL
+
+GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
+
 ## Getting Started
 
 ### Installation and Setup
@@ -16,7 +30,7 @@ GraphQL API for arXiv: e-print service by Cornell University
 - Install dependencies
 
 ```bash
-go get ./...
+make install
 ```
 
 ### Running
@@ -27,11 +41,15 @@ export PORT=<PORT> && go run main.go
 
 ### Testing
 
-TODO: Add Testing 
+```bash
+make test
+```
 
 ### Code Coverage
 
-TODO: Add Code Coverage
+```bash
+make cover
+```
 
 ## Issues
 
