@@ -5,10 +5,11 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/prabhuomkar/arxiv-graphql/gql"
+
 	"github.com/prabhuomkar/arxiv-graphql/config"
 
 	"github.com/graphql-go/handler"
-	"github.com/prabhuomkar/arxiv-graphql/schema"
 )
 
 const (
@@ -21,7 +22,7 @@ func main() {
 		panic(err)
 	}
 
-	schema, err := schema.GetSchema()
+	schema, err := gql.GetSchema()
 
 	h := handler.New(&handler.Config{
 		Schema:   &schema,
