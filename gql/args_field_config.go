@@ -1,8 +1,7 @@
-package schema
+package gql
 
 import (
 	"github.com/graphql-go/graphql"
-	"github.com/prabhuomkar/arxiv-graphql/resolver"
 )
 
 // ArgsFieldConfig : GraphQL Field Config for arXiv Feed Arguments
@@ -33,9 +32,9 @@ var ArgsFieldConfig = graphql.FieldConfigArgument{
 var sortByEnumConfig = graphql.EnumConfig{
 	Name: "sortBy",
 	Values: graphql.EnumValueConfigMap{
-		"relevance":       &graphql.EnumValueConfig{Value: resolver.SortByRelevance},
-		"lastUpdatedDate": &graphql.EnumValueConfig{Value: resolver.SortByLastUpdatedDate},
-		"submittedDate":   &graphql.EnumValueConfig{Value: resolver.SortBySubmittedDate},
+		"relevance":       &graphql.EnumValueConfig{Value: SortByRelevance},
+		"lastUpdatedDate": &graphql.EnumValueConfig{Value: SortByLastUpdatedDate},
+		"submittedDate":   &graphql.EnumValueConfig{Value: SortBySubmittedDate},
 	},
 }
 
@@ -43,7 +42,7 @@ var sortByEnumConfig = graphql.EnumConfig{
 var sortOrderEnumConfig = graphql.EnumConfig{
 	Name: "sortOrder",
 	Values: graphql.EnumValueConfigMap{
-		"ascending":  &graphql.EnumValueConfig{Value: resolver.SortOrderAscending},
-		"descending": &graphql.EnumValueConfig{Value: resolver.SortOrderDescending},
+		"ascending":  &graphql.EnumValueConfig{Value: SortOrderAscending},
+		"descending": &graphql.EnumValueConfig{Value: SortOrderDescending},
 	},
 }
