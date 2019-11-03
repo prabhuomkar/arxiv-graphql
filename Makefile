@@ -1,6 +1,5 @@
 packages = \
-	./config \
-	./resolver \
+	./gql \
 
 .PHONY: install
 install: 

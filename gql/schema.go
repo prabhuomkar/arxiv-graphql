@@ -1,8 +1,7 @@
-package schema
+package gql
 
 import (
 	"github.com/graphql-go/graphql"
-	"github.com/prabhuomkar/arxiv-graphql/resolver"
 )
 
 var (
@@ -11,7 +10,7 @@ var (
 			Description: "arXiv feed of papers",
 			Type:        graphql.NewList(FeedType),
 			Args:        ArgsFieldConfig,
-			Resolve:     resolver.FeedResolver,
+			Resolve:     FeedResolver,
 		},
 	}
 

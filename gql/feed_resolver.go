@@ -1,7 +1,8 @@
-package resolver
+package gql
 
 import (
 	"encoding/json"
+	"fmt"
 	"strings"
 
 	"github.com/prabhuomkar/arxiv-graphql/model"
@@ -64,6 +65,7 @@ var FeedResolver = func(p graphql.ResolveParams) (interface{}, error) {
 // fetches arXiv feed using their API
 func fetchArxivFeed(category, sortBy, sortOrder string, limit, offset int) ([]model.Article, error) {
 	apiURL := BuildAPIURL(category, sortBy, sortOrder, offset, limit)
+	fmt.Println(apiURL)
 	res, err := FetchResponse(apiURL)
 	if err != nil {
 		return nil, err
