@@ -46,3 +46,19 @@ var sortOrderEnumConfig = graphql.EnumConfig{
 		"descending": &graphql.EnumValueConfig{Value: SortOrderDescending},
 	},
 }
+
+// FieldArgsFieldConfig : GraphQL Field Config for arXiv Fields Arguments
+var FieldArgsFieldConfig = graphql.FieldConfigArgument{
+	"tag": &graphql.ArgumentConfig{
+		Type:        graphql.String,
+		Description: "Tag of the specific field",
+	},
+}
+
+// CategoryArgsFieldConfig : GraphQL Field Config for arXiv Category Arguments
+var CategoryArgsFieldConfig = graphql.FieldConfigArgument{
+	"field": &graphql.ArgumentConfig{
+		Type:        graphql.String,
+		Description: "Field Tag of the specific category",
+	},
+}

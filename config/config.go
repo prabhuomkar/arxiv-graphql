@@ -11,10 +11,10 @@ var Config Configuration
 type (
 	// Configuration ...
 	Configuration struct {
-		Environment string     `json:"environment"`
-		Service     Service    `json:"service"`
-		ArxivAPIURL string     `json:"arXivURL"`
-		Categories  []Category `json:"categories"`
+		Environment string  `json:"environment"`
+		Service     Service `json:"service"`
+		ArxivAPIURL string  `json:"arXivURL"`
+		Fields      []Field `json:"fields"`
 	}
 
 	// Service ...
@@ -23,15 +23,15 @@ type (
 		Version string `json:"version"`
 	}
 
-	// Category ...
-	Category struct {
-		Name          string        `json:"name"`
-		Tag           string        `json:"tag"`
-		SubCategories []SubCategory `json:"subcategories"`
+	// Field ...
+	Field struct {
+		Name       string     `json:"name"`
+		Tag        string     `json:"tag"`
+		Categories []Category `json:"categories"`
 	}
 
-	// SubCategory ...
-	SubCategory struct {
+	// Category ...
+	Category struct {
 		Name string `json:"name"`
 		Tag  string `json:"tag"`
 	}

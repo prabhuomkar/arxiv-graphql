@@ -5,15 +5,15 @@ import "time"
 type (
 	// Article : Model for arXiv article of the feed
 	Article struct {
-		ID              string     `json:"id"`
-		Updated         time.Time  `json:"updated"`
-		Published       time.Time  `json:"published"`
-		Title           string     `json:"title"`
-		Summary         string     `json:"summary"`
-		Author          []Author   `json:"author"`
-		Link            []Link     `json:"link"`
-		PrimaryCategory Category   `json:"primary_category"`
-		Category        []Category `json:"category"`
+		ID              string         `json:"id"`
+		Updated         time.Time      `json:"updated"`
+		Published       time.Time      `json:"published"`
+		Title           string         `json:"title"`
+		Summary         string         `json:"summary"`
+		Author          []Author       `json:"author"`
+		Link            []Link         `json:"link"`
+		PrimaryCategory FeedCategory   `json:"primary_category"`
+		Category        []FeedCategory `json:"category"`
 	}
 
 	// Response ...
@@ -38,8 +38,8 @@ type (
 		Title string `json:"-title"`
 	}
 
-	// Category ...
-	Category struct {
+	// FeedCategory ...
+	FeedCategory struct {
 		Term   string `json:"-term"`
 		Scheme string `json:"-scheme"`
 	}
