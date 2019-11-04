@@ -12,6 +12,18 @@ var (
 			Args:        ArgsFieldConfig,
 			Resolve:     FeedResolver,
 		},
+		"fields": &graphql.Field{
+			Description: "list of arXiv fields",
+			Type:        graphql.NewList(FieldsType),
+			Args:        FieldArgsFieldConfig,
+			Resolve:     FieldsResolver,
+		},
+		"categories": &graphql.Field{
+			Description: "list of arXiv categories",
+			Type:        graphql.NewList(CategoriesType),
+			Args:        CategoryArgsFieldConfig,
+			Resolve:     CategoriesResolver,
+		},
 	}
 
 	schemaConfig = graphql.SchemaConfig{

@@ -5,10 +5,10 @@
     "version": "1.0.0"
   },
   "arXivURL": "http://export.arxiv.org/api",
-  "categories": [{
+  "fields": [{
     "name": "Astrophysics",
     "tag": "astro-ph",
-    "subcategories": [
+    "categories": [
       { "name": "Astrophysics of Galaxies", "tag": "astro-ph.GA" },
       { "name": "Cosmology and Nongalactic Astrophysics", "tag": "astro-ph.CO" },
       { "name": "Earth and Planetary Astrophysics", "tag": "astro-ph.EP" },
@@ -18,7 +18,7 @@
   }, {
     "name": "Mathematics",
     "tag": "math",
-    "subcategories": [
+    "categories": [
       { "name": "Algebraic Geometry", "tag": "math.AG" },
       { "name": "Algebraic Topology", "tag": "math.AT" },
       { "name": "Analysis of PDEs", "tag": "math.AP" },
@@ -54,7 +54,7 @@
   }, {
     "name": "Quantitative Biology",
     "tag": "q-bio",
-    "subcategories": [
+    "categories": [
       { "name": "Biomolecules", "tag": "q-bio.BM" },
       { "name": "Cell Behavior", "tag": "q-bio.CB" },
       { "name": "Genomics", "tag": "q-bio.GN" },
@@ -68,7 +68,7 @@
   }, {
     "name": "Quantitative Finance",
     "tag": "q-fin",
-    "subcategories": [
+    "categories": [
       { "name": "Computational Finance", "tag": "q-fin.CP" },
       { "name": "Economics", "tag": "q-fin.EC" },
       { "name": "General Finance", "tag": "q-fin.GN" },
@@ -81,7 +81,7 @@
   }, {
     "name": "Statistics",
     "tag": "stat",
-    "subcategories": [
+    "categories": [
       { "name": "Applications", "tag": "stat.AP" },
       { "name": "Computation", "tag": "stat.CO" },
       { "name": "Machine Learning", "tag": "stat.ML" },
@@ -91,7 +91,7 @@
   }, {
     "name": "Electrical Engineering and Systems Science",
     "tag": "eess",
-    "subcategories": [
+    "categories": [
       { "name": "Audio and Speech Processing", "tag": "eess.AS" },
       { "name": "Image and Video Processing", "tag": "eess.IV" },
       { "name": "Signal Processing", "tag": "eess.SP" },
@@ -99,14 +99,14 @@
   }, {
     "name": "Economics",
     "tag": "econ",
-    "subcategories": [
+    "categories": [
       { "name": "Econometrics", "tag": "econ.EM" },
       { "name": "General Economics", "tag": "econ.GN" },
       { "name": "Theoretical Economics", "tag": "econ.TH" }]
   }, {
     "name": "Computer Science",
     "tag": "cs",
-    "subcategories": [
+    "categories": [
       { "name": "Artificial Intelligence", "tag": "cs.AI" },
       { "name": "Computation and Language", "tag": "cs.CL" },
       { "name": "Computational Complexity", "tag": "cs.CC" },
@@ -150,7 +150,7 @@
   }, {
     "name": "Condensed Matter",
     "tag": "cond-mat",
-    "subcategories": [
+    "categories": [
       { "name": "Disordered Systems and Neural Networks", "tag": "cond-mat.dis-nn" },
       { "name": "Materials Science", "tag": "cond-mat.mtrl-sci" },
       { "name": "Mesoscale and Nanoscale Physics", "tag": "cond-mat.mes-hall" },
@@ -163,31 +163,31 @@
   }, {
     "name": "General Relativity and Quantum Cosmology",
     "tag": "gr-qc",
-    "subcategories": []
+    "categories": []
   }, {
     "name": "High Energy Physics - Experiment",
     "tag": "hep-ex",
-    "subcategories": []
+    "categories": []
   }, {
     "name": "High Energy Physics - Lattice",
     "tag": "hep-lat",
-    "subcategories": []
+    "categories": []
   }, {
     "name": "High Energy Physics - Phenomenology",
     "tag": "hep-ph",
-    "subcategories": []
+    "categories": []
   }, {
     "name": "High Energy Physics - Theory",
     "tag": "hep-th",
-    "subcategories": []
+    "categories": []
   }, {
     "name": "Mathematical Physics",
     "tag": "math-ph",
-    "subcategories": []
+    "categories": []
   }, {
     "name": "Nonlinear Sciences",
     "tag": "nlin",
-    "subcategories": [
+    "categories": [
       { "name": "Adaptation and Self-Organizing Systems", "tag": "nlin.AO" },
       { "name": "Cellular Automata and Lattice Gases", "tag": "nlin.CG" },
       { "name": "Chaotic Dynamics", "tag": "nlin.CD" },
@@ -196,19 +196,19 @@
   }, {
     "name": "Nuclear Experiment",
     "tag": "nucl-ex",
-    "subcategories": []
+    "categories": []
   }, {
     "name": "Nuclear Theory",
     "tag": "nucl-th",
-    "subcategories": []
+    "categories": []
   }, {
     "name": "Quantum Physics",
     "tag": "quant-ph",
-    "subcategories": []
+    "categories": []
   }, {
     "name": "Physics",
     "tag": "physics",
-    "subcategories": [
+    "categories": [
       { "name": "Accelerator Physics", "tag": "physics.acc-ph" },
       { "name": "Applied Physics", "tag": "physics.app-ph" },
       { "name": "Atmospheric and Oceanic Physics", "tag": "physics.ao-ph" },
