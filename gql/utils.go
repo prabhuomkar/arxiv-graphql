@@ -9,25 +9,37 @@ import (
 	"github.com/prabhuomkar/arxiv-graphql/config"
 )
 
+const (
+	// DefaultAPIPath ...
+	DefaultAPIPath = "/query?search_query="
+	// PaperAPIPath ...
+	PaperAPIPath = "/query?id_list="
+)
+
 // BuildAPIURL : Builds API URL for ArXiV based on parameters
-func BuildAPIURL(category, sortBy, sortOrder string, start, maxResults int) string {
-	apiURL := config.Config.ArxivAPIURL + APIPath
-	if category != "" {
-		apiURL += "cat:" + category
-	}
-	if sortBy != "" {
-		apiURL += "&sortBy=" + sortBy
-	}
-	if sortOrder != "" {
-		apiURL += "&sortOrder=" + sortOrder
+func BuildAPIURL(idList, category, sortBy, sortOrder string, start, maxResults int) string {
+	apiURL := config.Config.ArxivAPIURL + DefaultAPIPath
+	if idList != "" {
+		apiURL = config.Config.ArxivAPIURL + PaperAPIPath
+		apiURL += idList
 	} else {
-		apiURL += "&sortOrder=" + SortOrderDescending
-	}
-	apiURL += "&start=" + fmt.Sprintf("%d", start)
-	if maxResults != 0 {
-		apiURL += "&max_results=" + fmt.Sprintf("%d", maxResults)
-	} else {
-		apiURL += "&max_results=" + fmt.Sprintf("%d", resultsLimit)
+		if category != "" {
+			apiURL += "cat:" + category
+		}
+		if sortBy != "" {
+			apiURL += "&sortBy=" + sortBy
+		}
+		if sortOrder != "" {
+			apiURL += "&sortOrder=" + sortOrder
+		} else {
+			apiURL += "&sortOrder=" + SortOrderDescending
+		}
+		apiURL += "&start=" + fmt.Sprintf("%d", start)
+		if maxResults != 0 {
+			apiURL += "&max_results=" + fmt.Sprintf("%d", maxResults)
+		} else {
+			apiURL += "&max_results=" + fmt.Sprintf("%d", resultsLimit)
+		}
 	}
 	return apiURL
 }

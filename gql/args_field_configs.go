@@ -62,3 +62,11 @@ var CategoryArgsFieldConfig = graphql.FieldConfigArgument{
 		Description: "Field Tag of the specific category",
 	},
 }
+
+// PaperArgsFieldConfig : GraphQL Field Config for arXiv Paper Arguments
+var PaperArgsFieldConfig = graphql.FieldConfigArgument{
+	"id": &graphql.ArgumentConfig{
+		Type:        graphql.String,
+		Description: "ID of the specific arXiv paper",
+	},
+}

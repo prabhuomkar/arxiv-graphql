@@ -26,9 +26,6 @@ const (
 	SortBySubmittedDate = "submittedDate"
 
 	resultsLimit = 10
-
-	// APIPath ...
-	APIPath = "/query?search_query="
 )
 
 // FeedResolver : Resolver for query { feed }
@@ -64,7 +61,7 @@ var FeedResolver = func(p graphql.ResolveParams) (interface{}, error) {
 
 // fetches arXiv feed using their API
 func fetchArxivFeed(category, sortBy, sortOrder string, limit, offset int) ([]model.Article, error) {
-	apiURL := BuildAPIURL(category, sortBy, sortOrder, offset, limit)
+	apiURL := BuildAPIURL("", category, sortBy, sortOrder, offset, limit)
 	fmt.Println(apiURL)
 	res, err := FetchResponse(apiURL)
 	if err != nil {

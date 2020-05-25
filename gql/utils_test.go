@@ -8,6 +8,7 @@ import (
 )
 
 type buildAPIURLTest struct {
+	idList     string
 	category   string
 	sortBy     string
 	sortOrder  string
@@ -46,12 +47,16 @@ func init() {
 			sortOrder: SortOrderAscending,
 			expected:  "http://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=ascending&start=0&max_results=10",
 		},
+		{
+			idList:   "2004.14356",
+			expected: "http://export.arxiv.org/api/query?id_list=2004.14356",
+		},
 	}
 }
 
 func TestUtils(t *testing.T) {
 	for _, test := range buildAPIURLTests {
-		found := BuildAPIURL(test.category, test.sortBy, test.sortOrder, test.start, test.maxResults)
+		found := BuildAPIURL(test.idList, test.category, test.sortBy, test.sortOrder, test.start, test.maxResults)
 		if !reflect.DeepEqual(found, test.expected) {
 			t.Fatalf("expected: %s, got: %s", test.expected, found)
 		}

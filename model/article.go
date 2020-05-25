@@ -21,9 +21,19 @@ type (
 		Feed Feed `json:"feed"`
 	}
 
+	// SingleResponse ...
+	SingleResponse struct {
+		SingleFeed SingleFeed `json:"feed"`
+	}
+
 	// Feed ...
 	Feed struct {
 		Entry []Article `json:"entry"`
+	}
+
+	// SingleFeed ...
+	SingleFeed struct {
+		Entry Article `json:"entry"`
 	}
 
 	// Author ...

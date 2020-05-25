@@ -2,10 +2,10 @@ package gql
 
 import "github.com/graphql-go/graphql"
 
-// FeedType : GraphQL type for arXiv Feed
-var FeedType = graphql.NewObject(
+// PaperType : GraphQL type for arXiv Feed
+var PaperType = graphql.NewObject(
 	graphql.ObjectConfig{
-		Name: "feed",
+		Name: "paper",
 		Fields: graphql.Fields{
 			"id": &graphql.Field{
 				Type:        graphql.String,

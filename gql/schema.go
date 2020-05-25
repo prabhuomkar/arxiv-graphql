@@ -8,7 +8,7 @@ var (
 	fields = graphql.Fields{
 		"feed": &graphql.Field{
 			Description: "arXiv feed of papers",
-			Type:        graphql.NewList(FeedType),
+			Type:        graphql.NewList(PaperType),
 			Args:        ArgsFieldConfig,
 			Resolve:     FeedResolver,
 		},
@@ -23,6 +23,12 @@ var (
 			Type:        graphql.NewList(CategoriesType),
 			Args:        CategoryArgsFieldConfig,
 			Resolve:     CategoriesResolver,
+		},
+		"paper": &graphql.Field{
+			Description: "information of single paper",
+			Type:        graphql.NewNonNull(PaperType),
+			Args:        PaperArgsFieldConfig,
+			Resolve:     PaperResolver,
 		},
 	}
 
