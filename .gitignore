@@ -14,7 +14,8 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
-# Droll Custom
+# Custom
 *.log
 .DS_Store
 *.xml
+coverage.txt

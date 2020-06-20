@@ -36,11 +36,12 @@ clear:
 		rm -rf ./**/*.xml;)
 
 .PHONY: cover
-cover: test
-	@echo "mode: count" > cover-all.out
+cover:
+	@set -e
+	@echo "" > coverage.txt
 	@$(foreach package,$(packages), \
-		tail -n +2 $(package)/cover.out >> cover-all.out;)
-	@${GOPATH}/bin/gocover-cobertura < cover-all.out > cover-cobertura.xml
+	    go test -race -coverprofile=profile.out -covermode=atomic $(package); cat profile.out >> coverage.txt)
+	@rm profile.out;
 
 .PHONY: show
 show:
