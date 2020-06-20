@@ -40,9 +40,10 @@ cover: test
 	@echo "mode: count" > cover-all.out
 	@$(foreach package,$(packages), \
 		tail -n +2 $(package)/cover.out >> cover-all.out;)
-	@gocover-cobertura < cover-all.out > cover-cobertura.xml
+	@${GOPATH}/bin/gocover-cobertura < cover-all.out > cover-cobertura.xml
 
 .PHONY: show
 show:
 	@echo Launching web browser to show overall coverage...
 	@go tool cover -html=cover-all.out
+
